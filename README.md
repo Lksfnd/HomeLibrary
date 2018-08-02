@@ -9,7 +9,7 @@ An additional feature to load image Covers and Metadata automatically would be a
 Generally there are two options: Full PHP applications or JavaScript. The advantage of javascript is that
 its way easiert to manipulate data within the page and makes it more dynamic. PHP however has the advantage
 of not requiring as much work and not needing a seperate server.
-This project will be written in JavaScript using a Rest-Service to dynamicly add data (like search autocompletion).
+This project will be written in JavaScript (Client) using a Rest-Service (PHP) to dynamicly add data (like search autocompletion).
 
 ## Database
 Obviously for this project, a relational database is the best choice here. MySQL will be used. The database Structure is described
@@ -27,20 +27,21 @@ Since Amazon allows the users to send ebooks directly to their kindle using an e
 ## Database - ERM
 NN -> Not Null
 AI -> Auto Insert
+UN -> Unique
 PK, FK -> Primary and Foreighn Key
 
 Book {
     PK id: uint AI NN           ** The identifier for the book
     title: text NN              ** The name of the book
-    FK Author.id: uint NN       ** The ID of the author
+    FK author: uint NN       ** The ID of the author
     description: string         ** The book description
-    isbn: string                ** The ISBN of the book
+    isbn: string UN             ** The ISBN of the book
     cover: string               ** A path to the cover of the book 
-    release: date               ** Release date of the book
+    releasedate: date               ** Release date of the book
     uploadDate: date            ** Date when the book was added to the libary
     tags: string                ** List of tags assigned to the book
     pages: uint                 ** Number of pages
-    publisher: 
+    FK publisher: uint       ** The publisher's id
 }
 
 Author {
@@ -59,3 +60,12 @@ Tag {
     PK id: uint AI NN           ** The identifier for the tag
     title: text NN              ** The name of the tag
 }
+
+## Contributing
+*Following soon*
+
+### General Stuff for coders
+Here's some information about the recommended (my) dev-setup.
+MySQL:  
+    name: root  
+    pass: 1234
