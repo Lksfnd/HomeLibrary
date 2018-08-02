@@ -29,7 +29,7 @@ NN -> Not Null
 AI -> Auto Insert  
 UN -> Unique  
 PK, FK -> Primary and Foreighn Key  
-  
+```javscript
 Book {  
     PK id: uint AI NN           ** The identifier for the book  
     title: text NN              ** The name of the book  
@@ -60,7 +60,7 @@ Tag {
     PK id: uint AI NN           ** The identifier for the tag  
     title: text NN              ** The name of the tag  
 }  
-
+```
 ## Contributing
 *Following soon*
 
